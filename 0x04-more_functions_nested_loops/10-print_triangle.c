@@ -3,6 +3,7 @@
 /**
  * print_triangle - entry point
  *@size: size of the triangle
+ *Return: Always 0
  */
 
 void print_triangle(int size)
