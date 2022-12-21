@@ -5,21 +5,25 @@
  * _strcat - concatenates two strings
  * @src: string
  * @dest:string
- * @n: the length of int
+ * @n: number of bytes to concatenate
  * Return: pointer to the resulting string dest
  */
-char *_strcat(char *dest, char *src, int n)
+char *_strncat(char *dest, char *src, int n)
 {
-	int i, j;
+	int length, j;
 
-	for (i = 0; dest[i] != '\0'; i++)
+	length = 0;
+
+	while (dest[length] != '\0')
 	{
-		continue;
+		length++;
 	}
-	for (j = 0; src[j] != '\0' && j < n; j++)
+	for (j = 0; j < n && src[j] != '\0'; j++, length++)
 	{
-		dest[i + j] = src[j];
+		dest[length] = src[j];
 	}
-	dest[i + j] = '\0';
+
+	dest[length] = '\0';
 	return (dest);
 }
+
